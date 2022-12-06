@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64", style= "height: 85vh; overflow: auto")
+    h1 BikeType: #{biketype.name}
+
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Models
+      dl
+      each model in biketype_models
+        dt
+          a(href=model.url) Name: #{model.model_name}
+        dd Power: #{model.power} hp
+        dd YouTube URL: #{model.yt_url}
+
+      else
+        p This biketype has no models.
+
+    hr
+    p
+      a(href=biketype.url + '/delete') Delete biketype
+    p
+      a(href=biketype.url + '/update') Update biketype

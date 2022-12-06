@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64")
+    h1(class='homeTitle') MOTOSPOT
+
+    form(method='POST' action='')
+      div.form-group
+        label(for='name') BikeType:
+        input#name.form-control(type='text', placeholder='Adventure, naked, sport etc.' name='name' required='true' value=(undefined===biketype ? '' : biketype.name) )
+      button.btn.btn-primary(type='submit') Submit
+
+    if errors
+      ul
+        for error in errors
+          li!= error.msg

@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+  head
+    title MOTOSPOT
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z", crossorigin="anonymous")
+    //script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin="anonymous")
+    //script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV", crossorigin="anonymous")
+    script(type="text/javascript" src="../../javaScript/template.js" rel="preload")
+    script(type="text/javascript" src="../../javaScript/soundImg.js" rel="preload")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/w3.css')
+    link(rel='stylesheet', href='/stylesheets/cssFonts.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+  body
+    div(class="w3-top")
+      div(class="w3-bar" id="myNavbar")
+        block sidebar
+          a(class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu")
+            i(class="fa fa-bars")
+          a(href='/catalog' class="w3-bar-item w3-button") Home
+          a(href='/catalog/brands' class="w3-bar-item w3-button") All brands
+          a(href='/catalog/models' class="w3-bar-item w3-button") All models
+          a(href='/catalog/biketypes' class="w3-bar-item w3-button") All biketypes
+          a(href='/catalog/brand/create' class="w3-bar-item w3-button") Create new brand
+          a(href='/catalog/model/create' class="w3-bar-item w3-button") Create new model
+          a(href='/catalog/biketype/create' class="w3-bar-item w3-button") Create new biketype
+      div(class='col-sm-10')
+        block content
+
+    div(class='bgimg-1 w3-display-container' id='home')
+      div(style="white-space:nowrap;")
+        audio(id="audio" src='../../audio/motorSound.wav')
+        a(href="#" id='play' class='logo')
+          img(class='logo' src='../../images/logo-light.png' onclick="playAudio('../../audio/motorSound.wav')")
+
+
+
+
+
+

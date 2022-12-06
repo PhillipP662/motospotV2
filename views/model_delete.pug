@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64")
+    h1(class='homeTitle') MOTOSPOT: #{model.model_name}
+
+    p #[strong Brand: ]
+      a(href=model.brand.url) #{model.brand.name}
+    p #[strong Power:] #{model.power} hp
+    p #[strong YouTube URL:] #{model.yt_url}
+    p #[strong BikeType: ]
+      each val in model.biketype
+        a(href=val.url) #{val.name}
+        |,
+
+    hr
+
+    p Do you really want to delete this Model?
+
+      form(method='POST' action='')
+        div.form-group
+          input#id.form-control(type='hidden',name='id', required='true', value=model._id )
+
+        button.btn.btn-primary(type='submit') Delete

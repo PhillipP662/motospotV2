@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64")
+    h1(class='homeTitle') MOTOSPOT: #{brand.name}
+    p= brand.lifespan
+
+    if brand_models.length
+
+      p #[strong Delete the following models before attempting to delete this brand.]
+
+      div(style='margin-left:20px;margin-top:20px')
+
+        h4 Models
+
+        dl
+        each model in brand_models
+          dt
+            a(href=model.url) #{model.model_name}
+          dd #{model.power}
+
+    else
+      p Do you really want to delete this Brand?
+
+      form(method='POST' action='')
+        div.form-group
+          input#brandid.form-control(type='hidden',name='brandid', required='true', value=brand._id )
+
+        button.btn.btn-primary(type='submit') Delete

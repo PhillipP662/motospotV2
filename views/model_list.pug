@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64")
+    h1(class='homeTitle') MOTOSPOT
+
+    div
+      ul(style= "height: 70vh; overflow: auto")
+        each model in model_list
+          li(class="bikeSummary")
+            a(href=model.url) #{model.model_name}
+            |  (#{model.brand.name})
+
+        else
+          li There are no models.

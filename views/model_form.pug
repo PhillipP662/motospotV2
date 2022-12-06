@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64")
+    h1(class='homeTitle') MOTOSPOT
+
+    form(method='POST' action='')
+      div.form-group
+        label(for='model_name') Model:
+        input#model_name.form-control(type='text', placeholder='Name of model' name='model_name' required='true' value=(undefined===model ? '' : model.model_name) )
+      div.form-group
+        label(for='brand') Brand:
+        select#brand.form-control(type='select', placeholder='Select brand' name='brand' required='true' )
+          - brands.sort(function(a, b) {let textA = a.brand_name.toUpperCase(); let textB = b.brand_name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+          for brand in brands
+            if model
+              option(value=brand._id selected=(brand._id.toString()===model.brand._id.toString() ? 'selected' : false) ) #{brand.name}
+            else
+              option(value=brand._id) #{brand.name}
+      div.form-group
+        label(for='power') Power:
+        input#power.form-control(type='textarea', placeholder='# hp' name='power' value=(undefined===model ? '' : model.power) required='true')
+      div.form-group
+        label(for='yt_url') YouTube URL:
+        input#yt_url.form-control(type='url', placeholder='Paste URL here...' name='yt_url' value=(undefined===model ? '' : model.yt_url) required='true')
+      div.form-group
+        div
+          label Bike Type:
+          for biketype in biketypes
+            div(style='display: inline; padding-right:10px;')
+              input.checkbox-input(type='checkbox', name='biketype', id=biketype._id, value=biketype._id, checked=biketype.checked )
+              label(for=biketype._id) #{biketype.name}
+      button.btn.btn-primary(type='submit') Submit
+
+    if errors
+      ul
+        for error in errors
+          li!= error.msg

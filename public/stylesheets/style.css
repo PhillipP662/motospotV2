@@ -1,0 +1,192 @@
+/*.sidebar-nav {*/
+/*    margin-top: 20px;*/
+/*    padding: 0;*/
+/*    list-style: none;*/
+/*}*/
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #ffffff;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url("../images/parallax1.jpg");
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url('../images/parallax2.jpg');
+    min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url('../images/parallax3.jpg');
+    min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+
+/* create styles */
+.content{
+    margin-left: 20px;
+}
+
+.create-blog form{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.create-blog input,
+.create-blog textarea{
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+}
+.create-blog label{
+    display: block;
+    margin-top: 24px;
+}
+textarea{
+    height: 120px;
+}
+.create-blog button{
+    margin-top: 20px;
+    background: crimson;
+    color: white;
+    padding: 6px;
+    border: 0;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.blogs a{
+    display: block;
+    margin: 40px 0;
+    padding-left: 30px;
+    border-left: 6px solid crimson;
+}
+.blogs a:hover h3{
+    color: crimson;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.bike-content {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    align-content: center;
+}
+
+.logo {
+    position: absolute;
+    width: 30%;
+    top: 12%;
+    left: 1%;
+    z-index: 100;
+}
+
+.homeTitle {
+    color: #00bcd4;
+}
+
+.bikeSummary {
+    margin-top: 2%;
+}
+
+#audio {
+    margin-top: 20%;
+    z-index: 999999;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+        min-height: 100%;
+    }
+}

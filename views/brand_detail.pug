@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64", style= "height: 85vh; overflow: auto")
+    h1 Brand: #{brand.name}
+    p #{brand.lifespan}
+
+    div(style='margin-left:20px;margin-top:20px')
+
+      h4 Models
+
+      div
+        dl
+          each model in brand_models
+            li(class="bikeSummary")
+              dt
+                a(href=model.url) Name: #{model.model_name}
+              dd Power: #{model.power} hp
+
+          else
+            p This brand has no models.
+
+    hr
+    p
+      a(href=brand.url+'/delete') Delete brand
+    p
+      a(href=brand.url+'/update') Update brand

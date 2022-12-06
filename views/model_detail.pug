@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64", style= "height: 85vh; overflow: auto")
+    h1 Model Name: #{model.model_name}
+
+    p #[strong Brand: ]
+      a(href=model.brand.url) #{model.brand.name}
+    p #[strong Power:] #{model.power} hp
+    p #[strong BikeType: ]
+      each val, index in model.biketype
+        a(href=val.url) #{val.name}
+        if index < model.biketype.length - 1
+          | ,
+    // p #[strong YouTube URL:] #{model.yt_url}
+    // iframe(class="YTvideos" width="420" height="315" src=model.yt_url)
+    iframe(width="560" height="315" src="https://www.youtube-nocookie.com/embed/TfoW1UzY1dI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+
+    hr
+    p
+      a(href=model.url+'/delete') Delete Model
+    p
+      a(href=model.url+'/update') Update Model

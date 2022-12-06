@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div(class="w3-content w3-container w3-padding-64")
+    a(class="weatherwidget-io" href="https://forecast7.com/en/51d053d72/ghent/" data-label_1="GENT" data-label_2="WEATHER" data-days="5" data-theme="weather_one") GENT WEATHER
+    h1(class='homeTitle') MOTOSPOT
+    
+    p Welcome to #[Motospot]. Easily find information about your favorite bike.
+
+      h1 OUR DATABASE:
+
+      if error
+        p Error getting dynamic content.
+      else
+
+        p Following bikes are already in our database, don't hesitate to add more.:
+
+        ul
+          li #[strong Models:] !{data.model_count}
+          li #[strong Brands:] !{data.brand_count}
+          li #[strong BikeTypes:] !{data.biketype_count}
+
